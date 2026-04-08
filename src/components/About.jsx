@@ -13,9 +13,6 @@ const itemVariants = {
 };
 
 const stats = [
-  { label: 'Years of Experience', value: '1+' },
-  { label: 'Projects Shipped', value: '5+' },
-  { label: 'CGPA', value: '8.90' },
   { label: 'Certifications', value: '2' },
 ];
 
@@ -93,14 +90,26 @@ export default function About() {
                   {certifications.map((cert) => (
                     <div
                       key={cert.name}
-                      className="flex items-start gap-3 p-4 rounded-xl border border-white/8 bg-white/3 hover:border-violet-500/20 transition-colors duration-300"
+                      className="relative flex items-start gap-4 p-4 rounded-xl border border-white/8 bg-white/3 hover:border-violet-500/30 hover:bg-white/5 transition-all duration-300 overflow-hidden"
                     >
-                      <div className="mt-0.5 w-8 h-8 rounded-lg bg-violet-500/15 flex items-center justify-center shrink-0">
-                        <Award size={14} className="text-violet-400" />
+                      {/* Left accent bar */}
+                      <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-violet-500/60 rounded-l-xl" />
+                      <div className="w-9 h-9 rounded-lg bg-violet-500/15 flex items-center justify-center shrink-0 ring-1 ring-violet-500/20">
+                        <Award size={15} className="text-violet-400" />
                       </div>
-                      <div>
-                        <p className="text-white text-sm font-medium">{cert.name}</p>
-                        <p className="text-gray-500 text-xs mt-0.5">{cert.issuer}</p>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-start justify-between gap-2 flex-wrap">
+                          <p className="text-white text-sm font-medium leading-snug">{cert.name}</p>
+                          {cert.date && (
+                            <span className="text-[10px] font-medium text-violet-400 bg-violet-500/10 border border-violet-500/20 px-2 py-0.5 rounded-full whitespace-nowrap shrink-0">
+                              {cert.date}
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-gray-500 text-xs mt-1">{cert.issuer}</p>
+                        {cert.detail && (
+                          <p className="text-gray-600 text-xs mt-1.5 leading-relaxed">{cert.detail}</p>
+                        )}
                       </div>
                     </div>
                   ))}

@@ -5,8 +5,8 @@ export const personal = {
   email: 'indrajeetbhujbal0@gmail.com',
   phone: '+91 9152746486',
   location: 'Mumbai, Maharashtra, India',
-  linkedin: 'https://www.linkedin.com/in/indrajeetbhujbal-5b4987285',
-  github: 'https://github.com/indrajeet',
+  linkedin: 'https://www.linkedin.com/in/indrajeet-bhujbal-5b4987285/',
+  github: 'https://github.com/indrajeet1705',
 };
 
 export const about = {
@@ -15,7 +15,7 @@ export const about = {
     'Core stack: Java · Spring Boot · NestJS · Express.js · PostgreSQL',
     'Built and deployed microservices architectures with Spring Cloud, Docker, and API Gateways',
     'Production experience: HRM automation, healthcare APIs, AI-powered backend agents',
-    '8.90 CGPA — BE Information Technology (ongoing)',
+    'BE Information Technology (ongoing)',
     'Oracle Certified: AI Foundations Associate',
   ],
 };
@@ -53,21 +53,40 @@ export const skills = [
 
 export const projects = [
   {
-    title: 'eCommerce Microservices Platform',
+    title: 'Activity Manager — Microservices Platform',
     description:
-      'Production-grade distributed eCommerce backend built with Java and Spring Boot. Implements a full microservices architecture with independent services for users, products, orders, and notifications — secured with Keycloak, deployed on AWS, and orchestrated via Docker.',
-    tech: ['Java', 'Spring Boot', 'Spring Cloud', 'Keycloak', 'Docker', 'AWS', 'API Gateway', 'Eureka', 'Config Server', 'React'],
+      'Distributed activity management backend built with Java and Spring Boot. Three independent services (User, Activity, AI) communicate via inter-service calls, secured with Keycloak OAuth 2.0, and use RabbitMQ for async AI recommendation generation — ensuring resilience even when services go offline.',
+    tech: ['Java', 'Spring Boot', 'Spring Cloud', 'Keycloak', 'RabbitMQ', 'Gemini API', 'Eureka', 'API Gateway', 'Config Server', 'PostgreSQL', 'MongoDB'],
     highlights: [
-      '6 independent microservices: User, Product, Order, Notification, API Gateway, Config Server',
-      'Spring Cloud Gateway for routing + Netflix Eureka for service discovery and registration',
-      'Centralized config management via Spring Cloud Config Server',
-      'Keycloak for OAuth2/OpenID Connect authentication across all services',
-      'Dockerized services with Docker Compose; deployed on AWS',
+      '3 microservices — User, Activity, AI — all registered with Netflix Eureka for service discovery',
+      'Centralized Spring Cloud Config Server serves application.properties to all services for easy scaling',
+      'OAuth 2.0 secured via Keycloak; all requests routed through a common API Gateway',
+      'Activity creation triggers inter-service call to User Service to verify the user exists',
+      'Gemini API generates AI recommendations per activity; published to RabbitMQ queue and consumed asynchronously by AI Service — recommendations are created even after service recovery',
+      'User Service uses PostgreSQL; Activity and AI Services use MongoDB',
     ],
-    github: 'https://github.com/indrajeet',
+    github: 'https://github.com/indrajeet1705',
     demo: null,
     featured: true,
     badge: 'Microservices',
+  },
+  {
+    title: 'Prescripto — Doctor Appointment System',
+    description:
+      'Full-stack MERN healthcare platform with three role-based portals for patients, doctors, and admins. Patients browse doctors by specialization, book and pay for appointments, and track history. Doctors manage appointments and write digital prescriptions. Admins oversee the entire platform via a dedicated dashboard.',
+    tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'Razorpay', 'Tailwind CSS'],
+    highlights: [
+      'Three role-based portals: Patient, Doctor, and Admin — each with distinct capabilities and protected routes',
+      'Patients can browse doctors by specialization, book appointments, view booking history, and cancel bookings',
+      'Doctors can view scheduled appointments and write digital prescriptions per patient',
+      'Admin dashboard to add/manage doctors, monitor all appointments, and track platform analytics',
+      'Razorpay payment gateway integration (test mode) for secure online appointment payments',
+      'JWT + bcrypt authentication with role-based authorization enforced across all portals',
+    ],
+    github: 'https://github.com/indrajeet1705/Prescripto',
+    demo: 'https://prescripto-g143.onrender.com/',
+    featured: false,
+    badge: 'Full-Stack',
   },
   {
     title: 'AI Brain Tumor Detection & Cancer Assistant',
@@ -80,26 +99,10 @@ export const projects = [
       'Persistent chat history + ML predictions stored in PostgreSQL',
       'Secure JWT auth with hashed password storage',
     ],
-    github: 'https://github.com/indrajeet',
+    github: 'https://github.com/indrajeet1705',
     demo: null,
     featured: true,
     badge: 'AI / ML',
-  },
-  {
-    title: 'Prescripto — Doctor Appointment System',
-    description:
-      'Full-stack healthcare appointment platform with role-based access for patients and admins. Features real-time booking, Razorpay payment integration, and a comprehensive admin dashboard.',
-    tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'Razorpay'],
-    highlights: [
-      'User & admin role-based authorization with JWT',
-      'Secure Razorpay payment gateway for appointment bookings',
-      'Admin dashboard: manage doctors, appointments, analytics',
-      'Fully responsive UI across patient and admin flows',
-    ],
-    github: 'https://github.com/indrajeet',
-    demo: null,
-    featured: false,
-    badge: 'Full-Stack',
   },
 ];
 
@@ -150,13 +153,15 @@ export const education = [
 
 export const certifications = [
   {
-    name: 'OCI AI Foundations Associate',
+    name: 'OCI 2025 AI Foundations Associate',
     issuer: 'Oracle Cloud Infrastructure',
+    date: 'Oct 2025',
     detail: 'AI fundamentals, ML concepts, and OCI AI services',
   },
   {
-    name: 'Cloud Computing',
-    issuer: 'NPTEL — IIT',
-    detail: 'Cloud architecture, virtualization, distributed systems, IaaS/PaaS/SaaS',
+    name: 'Cloud Computing — Elite',
+    issuer: 'NPTEL · IIT Kharagpur',
+    date: 'Jul – Oct 2025',
+    detail: 'Consolidated score: 71% · 12-week course',
   },
 ];
