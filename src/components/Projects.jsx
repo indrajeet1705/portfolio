@@ -18,7 +18,7 @@ const badgeColors = {
   'AI / ML':       'text-blue-400   border-blue-500/30   bg-blue-500/10',
   'Full-Stack':    'text-violet-400 border-violet-500/30 bg-violet-500/10',
 };
-
+console.log(projects[1])
 export default function Projects() {
   const featured = projects.filter((p) => p.featured);
   const rest     = projects.filter((p) => !p.featured);

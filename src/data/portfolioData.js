@@ -85,7 +85,7 @@ export const projects = [
     ],
     github: 'https://github.com/indrajeet1705/Prescripto',
     demo: 'https://prescripto-g143.onrender.com/',
-    featured: false,
+    featured: true,
     badge: 'Full-Stack',
   },
   {
