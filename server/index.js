@@ -11,7 +11,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.SERVER_PORT || 5000;
 
-app.use(cors({ origin: process.env.CLIENT_ORIGIN || 'http://localhost:5173' }));
+app.use(cors({ origin: process.env.CLIENT_ORIGIN || 'http://localhost:5173' || 'https://portfolio-0k27.onrender.com'}));
 app.use(express.json());
 const resend = new Resend(process.env.RESEND_API_KEY);
 
